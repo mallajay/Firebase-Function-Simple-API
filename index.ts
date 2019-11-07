@@ -17,7 +17,7 @@ app.get("/products", async (req, res) => {
     snaps.forEach(snap => products.push(snap.data()));
     res.status(200).json({ products });
   } catch (error) {
-    res.status(400).send(`Cannot get contacts: ${error}`);
+    res.status(400).send(`Cannot get products: ${error}`);
   }
 });
 
@@ -31,7 +31,7 @@ app.get("/products/:id", async (req, res) => {
       .get()
       .then(doc => res.status(200).json({ doc }));
   } catch (error) {
-    res.status(400).send(`Cannot get contacts: ${error}`);
+    res.status(400).send(`Cannot get products: ${error}`);
   }
 });
 
@@ -43,7 +43,7 @@ app.post("/products", async (req, res) => {
       category: req.body["category"],
       brand: req.body["brand"]
     });
-    res.status(200).send(`Created a new contact: ${products.id}`);
+    res.status(200).send(`Created a new products: ${products.id}`);
   } catch (error) {
     console.log(error);
     res.status(404).send(error);
@@ -64,7 +64,7 @@ app.put("/products/:id", async (req, res) => {
       .collection("products")
       .doc(productId)
       .set(data, { merge: true });
-    res.status(200).send(`Update a new contact: ${updatedDoc}`);
+    res.status(200).send(`Update a new product: ${updatedDoc}`);
   } catch (error) {
     console.log(error);
     res.status(404).send(error);
