@@ -10,12 +10,17 @@ const app = express();
 export const webApi = functions.https.onRequest(app);
 
 // Get all products
-app.get("/products", async (req, res) => {
+app.get('/products', async (req, res) => {
   try {
-    const snaps = await db.collection("products").get();
-    const products: any[] = [];
-    snaps.forEach(snap => products.push(snap.data()));
-    res.status(200).json({ products });
+    const docs = await db.collection('products').get();
+    res.send(
+      docs.docs.map((doc) => {
+        return {
+          productId: doc.id,
+          ...doc.data(),
+        };
+      })
+    );
   } catch (error) {
     res.status(400).send(`Cannot get products: ${error}`);
   }
