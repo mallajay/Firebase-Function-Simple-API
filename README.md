@@ -1,4 +1,4 @@
-# CRUD-Using-Firebase-Function-
+# Firebase-Function-Simple-API
 
 ## Install 
 
