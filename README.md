@@ -1,2 +1,19 @@
 # CRUD-Using-Firebase-Function-
-CRUD Using Firebase Function  Using Node.js, Express, TypeScript and Firebase Firestore
+
+## Install 
+
+    1.npm i express
+    2.npm i cross
+    3.npm i cookie-parser 
+   
+
+
+To Run on local server
+```
+ npm run firebase   
+```
+
+To Deploy Run
+```
+firebase deploy --only functions
+```
