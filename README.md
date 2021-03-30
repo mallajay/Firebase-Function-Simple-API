@@ -17,3 +17,6 @@ To Deploy Run
 ```
 firebase deploy --only functions
 ```
+
+Read More About     <br/>
+https://github.com/jthegedus/firebase-gcp-examples
